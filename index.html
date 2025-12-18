@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical & CCTV Services - Jasa Instalasi Listrik & CCTV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #f59e0b;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+            --white: #ffffff;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* Services Section - Modified to 4 columns */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .service-features {
+            list-style: none;
+            text-align: left;
+            width: 100%;
+        }
+
+        .service-features li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .service-features i {
+            color: var(--success);
+            margin-right: 10px;
+        }
+
+        /* Special card styling - one card positioned differently */
+        .service-card.special {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+            z-index: 1;
+        }
+
+        .service-card.special .service-icon {
+            color: var(--white);
+            animation: pulse 2s infinite;
+        }
+
+        .service-card.special h3 {
+            color: var(--white);
+        }
+
+        .service-card.special p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .service-card.special .service-features i {
+            color: var(--accent);
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .portfolio-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            transition: color 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-content h3 {
+            color: var(--primary);
+        }
+
+        .portfolio-content p {
+            color: #6b7280;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-content p {
+            color: var(--primary);
+        }
+
+        .portfolio-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-badge {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Why Choose Me Section */
+        .why-choose-me {
+            background-color: var(--white);
+            padding: 4rem 0;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--light);
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .advantage-item:hover {
+            transform: translateY(-5px);
+            background-color: #e0e7ff;
+        }
+
+        .advantage-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .advantage-item:hover .advantage-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .advantage-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .advantage-item p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+        }
+
+        .pricing-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-features i {
+            color: var(--success);
+            margin-right: 10px;
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .portfolio-grid,
+            .advantages-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .slide-in {
+            animation: slideIn 0.6s ease-out;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <h1>Electrical & CCTV Services</h1>
+            <p>Teknisi Freelance Profesional untuk Instalasi Listrik & CCTV</p>
+            <a href="#contact" class="cta-button">Hubungi Sekarang</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">E&C Services</div>
+            <ul class="nav-links">
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#portfolio">Portofolio</a></li>
+                <li><a href="#why-choose">Keunggulan</a></li>
+                <li><a href="#pricing">Harga</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Services Section -->
+    <section id="services" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">Layanan Jasa</h2>
+            <div class="services-grid">
+                <!-- Electrical Service -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Jasa Electrical</h3>
+                    <p>Instalasi listrik rumah & bangunan</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Instalasi listrik</li>
+                        <li><i class="fas fa-check"></i> Perbaikan & maintenance</li>
+                        <li><i class="fas fa-check"></i> Panel listrik & grounding</li>
+                        <li><i class="fas fa-check"></i> Lampu indoor & outdoor</li>
+                    </ul>
+                </div>
+
+                <!-- CCTV Service -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Instalasi CCTV</h3>
+                    <p>Sistem keamanan modern</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> CCTV analog & IP Camera</li>
+                        <li><i class="fas fa-check"></i> Monitoring via HP & Web</li>
+                        <li><i class="fas fa-check"></i> Rekaman & history playback</li>
+                        <li><i class="fas fa-check"></i> Upgrade kamera</li>
+                    </ul>
+                </div>
+
+                <!-- Construction Service (NEW) -->
+                <div class="service-card special">
+                    <div class="service-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>Jasa Tukang Bangunan</h3>
+                    <p>Desain dan konstruksi profesional</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Desain & perencanaan</li>
+                        <li><i class="fas fa-check"></i> Konstruksi rumah & perkantoran</li>
+                        <li><i class="fas fa-check"></i> Renovasi & perbaikan</li>
+                        <li><i class="fas fa-check"></i> Pembangunan lengkap</li>
+                    </ul>
+                </div>
+
+                <!-- Maintenance Service -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Maintenance & Support</h3>
+                    <p>Layanan pemeliharaan teknis</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Maintenance berkala</li>
+                        <li><i class="fas fa-check"></i> Troubleshooting sistem</li>
+                        <li><i class="fas fa-check"></i> Backup data rekaman</li>
+                        <li><i class="fas fa-check"></i> Support jarak jauh</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">Portofolio Pekerjaan</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item slide-in">
+                    <div class="portfolio-badge">CCTV</div>
+                    <div class="portfolio-image">
+                        <img src="https://promocctv.com/wp-content/uploads/2022/11/pasang-cctv-di-toko.jpg" alt="Instalasi CCTV Toko Retail">
+                        <div class="portfolio-overlay"></div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Instalasi CCTV 8 Channel – Toko Retail</h3>
+                        <p>Sistem monitoring online via web dengan rekaman 24/7</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item slide-in" style="animation-delay: 0.1s;">
+                    <div class="portfolio-badge">Electrical</div>
+                    <div class="portfolio-image">
+                        <img src="https://interuma.com/wp-content/uploads/2023/10/harga-jasa-pasang-instalasi-listrik-per-titik-2023-225x300.webp" alt="Instalasi Listrik Rumah">
+                        <div class="portfolio-overlay"></div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Instalasi Listrik Rumah Tinggal</h3>
+                        <p>Desain dan instalasi listrik lengkap untuk rumah mewah</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item slide-in" style="animation-delay: 0.2s;">
+                    <div class="portfolio-badge">Maintenance</div>
+                    <div class="portfolio-image">
+                        <img src="https://img.mbizmarket.co.id/products/thumbs/500x500/2022/11/06/69bcdc0e0329e8037ee9a5bb26a980e1.jpg" alt="Maintenance CCTV Kantor">
+                        <div class="portfolio-overlay"></div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Maintenance CCTV Kantor & Gudang</h3>
+                        <p>Pemeliharaan sistem keamanan untuk bisnis profesional</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item slide-in" style="animation-delay: 0.3s;">
+                    <div class="portfolio-badge">Lighting</div>
+                    <div class="portfolio-image">
+                        <img src="https://www.customizelighting.com/wp-content/uploads/2024/07/LED-street-light-in-Parking-lot.jpg" alt="Instalasi Lampu Outdoor">
+                        <div class="portfolio-overlay"></div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Instalasi Lampu Outdoor Area Parkir</h3>
+                        <p>Penerangan area parkir dengan lampu LED hemat energi</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item slide-in" style="animation-delay: 0.4s;">
+                    <div class="portfolio-badge">Industrial</div>
+                    <div class="portfolio-image">
+                        <img src="https://media.istockphoto.com/id/2166685594/id/foto/layanan-pemeliharaan-listrik-dan-listrik-tes-listrik-sirkuit-listrik-industri-dengan.jpg?s=612x612&w=0&k=20&c=c7J_-TEeRnCCugvTiUoBASYrm2onT08OgjeqLoR4RaM=" alt="Panel Listrik Industri">
+                        <div class="portfolio-overlay"></div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Panel Listrik Industri</h3>
+                        <p>Instalasi panel listrik 3 phase untuk pabrik kecil</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item slide-in" style="animation-delay: 0.5s;">
+                    <div class="portfolio-badge">Upgrade</div>
+                    <div class="portfolio-image">
+                        <img src="https://camarjaya.co.id/wp-content/uploads/2024/12/Manfaat-AI-Box-Pada-CCTV.jpg" alt="Upgrade CCTV Hotel">
+                        <div class="portfolio-overlay"></div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Upgrade CCTV Hotel 16 Channel</h3>
+                        <p>Migrasi dari sistem analog ke IP Camera HD</p>
+                    </div>
+                </div>
+
+                <!-- New Construction Portfolio Item -->
+                <div class="portfolio-item slide-in" style="animation-delay: 0.6s;">
+                    <div class="portfolio-badge">Construction</div>
+                    <div class="portfolio-image">
+                        <img src="https://i0.wp.com/www.emporioarchitect.com/upload/portofolio/thumb/hasil-konstruksi-desain-rumah-modern-3-lantai-35021225-246349138021225023928.jpg" alt="Konstruksi Rumah">
+                        <div class="portfolio-overlay"></div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Konstruksi Rumah 2 Lantai</h3>
+                        <p>Desain dan pembangunan rumah minimalis modern</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me Section -->
+    <section id="why-choose" class="why-choose-me fade-in">
+        <div class="container">
+            <h2 class="section-title">Mengapa Memilih Saya?</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Harga Terjangkau</h3>
+                    <p>Biaya yang kompetitif tanpa mengorbankan kualitas</p>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-user-hard-hat"></i>
+                    </div>
+                    <h3>Teknisi Berpengalaman</h3>
+                    <p>Lebih dari 10 tahun pengalaman di lapangan</p>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Respon Cepat</h3>
+                    <p>Dukungan 24/7 untuk kebutuhan darurat</p>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Keamanan & Kerapian</h3>
+                    <p>Hasil kerja yang aman dan rapi sesuai standar</p>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Support Online & Offline</h3>
+                    <p>Dukungan teknis melalui berbagai channel</p>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Custom Sesuai Kebutuhan</h3>
+                    <p>Solusi yang disesuaikan dengan kebutuhan Anda</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">Estimasi Harga Fleksibel</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Instalasi CCTV</h3>
+                    <div class="pricing-price">Rp <span>500.000</span> / titik</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Kamera IP HD</li>
+                        <li><i class="fas fa-check"></i> NVR 4 Channel</li>
+                        <li><i class="fas fa-check"></i> Kabel & Aksesoris</li>
+                        <li><i class="fas fa-check"></i> Instalasi & Konfigurasi</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3 class="pricing-title">Instalasi Listrik</h3>
+                    <div class="pricing-price">Rp <span>300.000</span> / titik</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Kabel NYA 2.5mm</li>
+                        <li><i class="fas fa-check"></i> Box & Saklar Listrik</li>
+                        <li><i class="fas fa-check"></i> Instalasi & Tes Listrik</li>
+                        <li><i class="fas fa-check"></i> Garansi 1 Tahun</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Konstruksi Bangunan</h3>
+                    <div class="pricing-price">Rp <span>2.500.000</span> / m²</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Desain & Perencanaan</li>
+                        <li><i class="fas fa-check"></i> Material berkualitas</li>
+                        <li><i class="fas fa-check"></i> Tenaga ahli</li>
+                        <li><i class="fas fa-check"></i> Garansi kerja</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Maintenance Bulanan</h3>
+                    <div class="pricing-price">Rp <span>200.000</span> / bulan</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Cek sistem CCTV</li>
+                        <li><i class="fas fa-check"></i> Pembersihan kamera</li>
+                        <li><i class="fas fa-check"></i> Backup data</li>
+                        <li><i class="fas fa-check"></i> Support jarak jauh</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; color: #6b7280;">
+                <p><strong>💡 Harga dapat disesuaikan dengan lokasi dan tingkat kesulitan pekerjaan.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" placeholder="Masukkan nama Anda">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Nomor Telepon</label>
+                    <input type="tel" id="phone" placeholder="Masukkan nomor telepon">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Masukkan email Anda">
+                </div>
+                <div class="form-group">
+                    <label for="service">Jasa yang Diminta</label>
+                    <select id="service">
+                        <option value="">Pilih jasa</option>
+                        <option value="electrical">Instalasi Listrik</option>
+                        <option value="cctv">Instalasi CCTV</option>
+                        <option value="construction">Tukang Bangunan</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="other">Lainnya</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan</label>
+                    <textarea id="message" placeholder="Tulis pesan atau deskripsi pekerjaan Anda"></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">Kirim Pesan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <h3>Electrical & CCTV Services</h3>
+            <p>Teknisi freelance profesional untuk kebutuhan instalasi listrik dan CCTV Anda</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.9rem;">&copy; 2024 Electrical & CCTV Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission (simulated)
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.');
+            this.reset();
+        });
+
+        // Add fade-in animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add hover effect for service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#f0f9ff';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = 'white';
+            });
+        });
+
+        // Add staggered animation for portfolio items
+        document.querySelectorAll('.portfolio-item').forEach((item, index) => {
+            item.style.animation = `slideIn 0.6s ease-out ${index * 0.1}s both`;
+        });
+
+        // Add floating animation for some portfolio items
+        document.querySelectorAll('.portfolio-item').forEach((item, index) => {
+            if (index % 2 === 0) {
+                item.classList.add('float');
+            }
+        });
+    </script>
+</body>
+</html>
