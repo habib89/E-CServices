@@ -953,7 +953,10 @@
                 <a href="#"><i class="fab fa-whatsapp"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
-            <p style="margin-top: 2rem; font-size: 0.9rem;">&copy; 2024 Electrical & CCTV Services. All rights reserved.</p>
+           <p style="margin-top: 2rem; font-size: 0.9rem;">
+              &copy; <span id="year"></span> Electrical & CCTV Services. All rights reserved.
+            </p>
+
         </div>
     </footer>
 
@@ -1009,6 +1012,7 @@
                 item.classList.add('float');
             }
         });
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
