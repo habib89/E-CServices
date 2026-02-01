@@ -121,6 +121,50 @@
             color: var(--primary);
         }
 
+        /* App Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-size: 28px;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background-color: var(--dark);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .whatsapp-btn:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
+
         /* Section Styles */
         section {
             padding: 4rem 0;
@@ -517,6 +561,25 @@
             color: var(--accent);
         }
 
+        /* Contact Info in Footer */
+        .contact-info {
+            margin-top: 2rem;
+            font-size: 1rem;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
         /* Responsive Design */
         @media (max-width: 1200px) {
             .services-grid {
@@ -542,6 +605,14 @@
             .advantages-grid,
             .pricing-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .whatsapp-btn {
+                bottom: 10px;
+                right: 10px;
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
             }
         }
 
@@ -632,6 +703,12 @@
             </ul>
         </div>
     </nav>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/6287883222361?text=Halo%20Electrical%20%26%20CCTV%20Services%2C%20saya%20ingin%20bertanya%20tentang%20jasa%20Anda." class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Hubungi via WhatsApp</span>
+    </a>
 
     <!-- Services Section -->
     <section id="services" class="fade-in">
@@ -953,10 +1030,17 @@
                 <a href="#"><i class="fab fa-whatsapp"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
-           <p style="margin-top: 2rem; font-size: 0.9rem;">
-              &copy; <span id="year"></span> Electrical & CCTV Services. All rights reserved.
+            
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> Telepon: <a href="tel:+628123456789">+62 878-8322-2361</a></p>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@electricalcctv.com">info.solusi@gmail.com</a></p>
+                 <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/6287883222361?text=Halo%20Electrical%20%26%20CCTV%20Services%2C%20saya%20ingin%20bertanya%20tentang%20jasa%20Anda.">+62 878-8322-2361</a></p>
+            </div>
+            
+            <p style="margin-top: 2rem; font-size: 0.9rem;">
+                &copy; <span id="year"></span> Electrical & CCTV Services. All rights reserved.
             </p>
-
         </div>
     </footer>
 
@@ -1012,6 +1096,7 @@
                 item.classList.add('float');
             }
         });
+
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
